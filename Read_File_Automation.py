@@ -1,7 +1,7 @@
 from selenium import webdriver
 import pandas as pd
 import time
-import excel_operation
+import Write_File_Automation
 
 def read_excel():
     reader = pd.read_excel('Test_Case/TestCase.xlsx')
@@ -44,20 +44,20 @@ def action_defination(sn,test_summary,xpath,action,value):
             remarks = 'Action defination not found'
             print(result,remarks)
         print(sn,test_summary,result,remarks)
-        excel_operation.write_result(sn,test_summary,result,remarks)
+        Write_File_Automation.write_result(sn,test_summary,result,remarks)
         # excel_operation.write_data()
     except Exception as ex:
         print("Exception has occured")
         result = 'FAIL'
         remarks = ex
         print(result,remarks)
-        excel_operation.write_result(sn, test_summary, result, remarks)
+        Write_File_Automation.write_result(sn, test_summary, result, remarks)
 
 def open_browser_function(value):
     global driver
     if value == 'Chrome':
         print('Chrome Browser Selected')
-        driver = webdriver.Chrome('Driver_Path/chromedriver')
+        driver = webdriver.Chrome('Driver_Path/chromedriver.exe')
         driver.maximize_window()
     elif value == 'Firefox':
         driver = webdriver.Firefox()
