@@ -4,7 +4,8 @@ import time
 import Write_File_Automation
 
 def read_excel():
-    reader = pd.read_excel('Test_Case/TestCase.xlsx')
+    print("Hello")
+    reader = pd.read_excel('./Test_Case/TestCase.xlsx')
     for row,column in reader.iterrows():
         sn = column['SN']
         execute_flag = column['Execute_FLAG']
@@ -33,6 +34,8 @@ def action_defination(sn,test_summary,xpath,action,value):
             result,remarks = verify_text_function(driver,xpath,value)
         elif action == 'send_value':
             result,remarks = send_value_function(driver,xpath,value)
+        elif action == 'hover':
+            result,remarks = hover_function(driver,xpath,value)
         elif action == 'select_dropdown':
             result,remarks = select_dropdown_function(driver,xpath,value)
         elif action == 'wait':
@@ -44,14 +47,14 @@ def action_defination(sn,test_summary,xpath,action,value):
             remarks = 'Action defination not found'
             print(result,remarks)
         print(sn,test_summary,result,remarks)
-        Write_File_Automation.write_result(sn,test_summary,result,remarks)
+        # Write_File_Automation.write_result(sn,test_summary,result,remarks)
         # excel_operation.write_data()
     except Exception as ex:
         print("Exception has occured")
         result = 'FAIL'
         remarks = ex
         print(result,remarks)
-        Write_File_Automation.write_result(sn, test_summary, result, remarks)
+        # Write_File_Automation.write_result(sn, test_summary, result, remarks)
 
 def open_browser_function(value):
     global driver
@@ -80,6 +83,15 @@ def open_url_function(driver,value):
 def click_function(driver,xpath):
     try:
         driver.find_element_by_xpath(xpath).click()
+        result,remarks = 'PASS', ''
+    except Exception as ex:
+        result = 'FAIL'
+        remarks = ex
+    return result,remarks
+
+def hover_function(driver,xpath,value):
+    try:
+        driver.move_to_element(xpath).click(value).perform()
         result,remarks = 'PASS', ''
     except Exception as ex:
         result = 'FAIL'
@@ -140,6 +152,6 @@ def close_browser_function(driver):
 
 if __name__ == "__main__":
     # excel_operation.remove_file()
-    print("file removed")
+    # print("file removed")
     read_excel()
     # excel_operation.write_summary()
