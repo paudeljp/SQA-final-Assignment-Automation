@@ -1,7 +1,12 @@
 from selenium import webdriver
 import pandas as pd
-import time
 import Write_File_Automation
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+import time
+
+
+
 
 def read_excel():
     print("Hello")
@@ -31,15 +36,17 @@ def action_defination(sn,test_summary,xpath,action,value):
         elif action == 'click':
             result,remarks = click_function(driver,xpath)
         elif action == 'verify_text':
-            result,remarks = verify_text_function(driver,xpath,value)
+            result,remarks = verify_text_function(driver,xpath)
+        elif action == 'verify_title':
+            result,remarks = verify_title_function(driver,value)
         elif action == 'send_value':
             result,remarks = send_value_function(driver,xpath,value)
-        elif action == 'hover':
-            result,remarks = hover_function(driver,xpath,value)
         elif action == 'select_dropdown':
             result,remarks = select_dropdown_function(driver,xpath,value)
         elif action == 'wait':
             result,remarks = wait_function(value)
+        elif action == 'hover':
+            result,remarks = hover_function(driver,xpath)
         elif action == 'close_browser':
             result,remarks = close_browser_function(driver)
         else:
@@ -89,16 +96,7 @@ def click_function(driver,xpath):
         remarks = ex
     return result,remarks
 
-def hover_function(driver,xpath,value):
-    try:
-        driver.move_to_element(xpath).click(value).perform()
-        result,remarks = 'PASS', ''
-    except Exception as ex:
-        result = 'FAIL'
-        remarks = ex
-    return result,remarks
-
-def verify_text_function(driver,xpath,value):
+def verify_text_function(driver,xpath):
     try:
         driver.find_element_by_xpath(xpath)
         result,remarks = 'PASS',''
@@ -137,6 +135,38 @@ def select_dropdown_function(driver,xpath,value):
 def wait_function(value):
     try:
         time.sleep(value)
+        result,remarks = 'PASS', ''
+    except Exception as ex:
+        result,remarks = 'FAIL', ex
+    return result,remarks
+
+def verify_title_function(driver ,value):
+    actual_text = driver.title
+    expected_text = value
+    try:
+        assert expected_text == actual_text
+    except AssertionError:
+        result,remarks = 'FAIL', 'Title not matched'
+    else:
+        result,remarks = 'PASS', ''
+    return result,remarks
+
+# output_text = driver.find_element_by_xpath(xpath).text
+    # try:
+    #     assert output_text == value
+    # except AssertionError:
+    #     result = 'FAIL'
+    #     remarks = 'Actual value is ' + output_text + 'Input value is' + value
+    # else:
+    #     result = 'PASS'
+    #     remarks = ''
+    # return result,remarks
+def hover_function(driver,xpath):
+    action = ActionChains(driver)
+    try:
+        hover_element = driver.find_element_by_xpath(xpath)
+        action.move_to_element(hover_element).perform()
+        # driver.switch_to.window(driver.window_handles[0])
         result,remarks = 'PASS', ''
     except Exception as ex:
         result,remarks = 'FAIL', ex
