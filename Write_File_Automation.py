@@ -2,7 +2,6 @@ import openpyxl
 import os
 # import time
 from datetime import datetime
-time = str(datetime.now())
 
 test_result_location = 'Output_Result/test_result/TestResult.xlsx'
 
@@ -31,14 +30,25 @@ def write_result(sn,test_summary,result,remarks):
         start_column+=1
     workbook.save(test_result_location)
 
-def write_summary():
+def write_summary(start_time, url_name):
     # workbook = openpyxl.Workbook()
+    end_time = str(datetime.now())
     workbook = openpyxl.load_workbook(test_result_location)
     worksheet = workbook.create_sheet('TestSummary')
     worksheet.cell(row=1, column=1).value = "Test Executed On"
-    worksheet.cell(row=1, column=2).value = time
-    worksheet.cell(row=2, column=1).value = "Number of Test Cases"
-    worksheet.cell(row=2, column=2).value = "=(COUNTA(TestResults!A:A) - 1)"
+    worksheet.cell(row=1, column=2).value = start_time
+    worksheet.cell(row=2, column=1).value = "Test Completed On"
+    worksheet.cell(row=2, column=2).value = end_time
+    worksheet.cell(row=3, column=1).value = "URL"
+    worksheet.cell(row=3, column=2).value = url_name
+    worksheet.cell(row=4, column=1).value = "Total Number of Test"
+    worksheet.cell(row=4, column=2).value = "=(COUNTA(TestResults!A:A) - 1)"
+    worksheet.cell(row=5, column=1).value = "Number of Passed Test Case"
+    worksheet.cell(row=5, column=2).value = '=COUNTIF(TestResults!C:C, "PASS")'
+    worksheet.cell(row=6, column=1).value = "Number of Failed Test Case"
+    worksheet.cell(row=6, column=2).value = '=COUNTIF(TestResults!C:C, "FAIL")'
+    worksheet.cell(row=7, column=1).value = "Number of Skipped Test Case"
+    worksheet.cell(row=7, column=2).value = '=COUNTIF(TestResults!C:C, "SKIPPED")'
     workbook.save(test_result_location)
 
 def remove_file():

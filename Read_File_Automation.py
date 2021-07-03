@@ -3,8 +3,11 @@ import pandas as pd
 import Write_File_Automation
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from datetime import datetime
 import time
 
+start_time = str(datetime.now())
+url_name = ''
 
 def read_excel():
     print("Selenium Web Automation Framework")
@@ -19,9 +22,10 @@ def read_excel():
         if execute_flag != 'N':
             action_defination(sn,test_summary,xpath,action,value)
         else:
-            result = 'Not Tested'
+            result = 'SKIPPED'
             remarks = 'Test was skipped due to N FLAG'
             print(result,remarks)
+            Write_File_Automation.write_result(sn, test_summary, result, remarks)
 
 def action_defination(sn,test_summary,xpath,action,value):
     try:
@@ -182,4 +186,4 @@ if __name__ == "__main__":
     Write_File_Automation.remove_file()
     print("file removed")
     read_excel()
-    Write_File_Automation.write_summary()
+    Write_File_Automation.write_summary(start_time, url_name)
