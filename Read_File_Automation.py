@@ -6,10 +6,8 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 
-
-
 def read_excel():
-    print("Hello")
+    print("Selenium Web Automation Framework")
     reader = pd.read_excel('./Test_Case/TestCase.xlsx')
     for row,column in reader.iterrows():
         sn = column['SN']
@@ -54,14 +52,13 @@ def action_defination(sn,test_summary,xpath,action,value):
             remarks = 'Action defination not found'
             print(result,remarks)
         print(sn,test_summary,result,remarks)
-        # Write_File_Automation.write_result(sn,test_summary,result,remarks)
-        # excel_operation.write_data()
+        Write_File_Automation.write_result(sn,test_summary,result,remarks)
     except Exception as ex:
         print("Exception has occured")
         result = 'FAIL'
         remarks = ex
         print(result,remarks)
-        # Write_File_Automation.write_result(sn, test_summary, result, remarks)
+        Write_File_Automation.write_result(sn, test_summary, result, remarks)
 
 def open_browser_function(value):
     global driver
@@ -70,7 +67,8 @@ def open_browser_function(value):
         driver = webdriver.Chrome('Driver_Path/chromedriver.exe')
         driver.maximize_window()
     elif value == 'Firefox':
-        driver = webdriver.Firefox()
+        print('Firefox Browser Selected')
+        driver = webdriver.Firefox(executable_path="Driver_Path/firefox/geckodriver.exe")
     elif value == 'Safari':
         driver = webdriver.Safari()
     else:
@@ -181,7 +179,7 @@ def close_browser_function(driver):
     return result,remarks
 
 if __name__ == "__main__":
-    # excel_operation.remove_file()
-    # print("file removed")
+    Write_File_Automation.remove_file()
+    print("file removed")
     read_excel()
-    # excel_operation.write_summary()
+    Write_File_Automation.write_summary()

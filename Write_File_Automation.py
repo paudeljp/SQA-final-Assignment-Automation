@@ -1,8 +1,9 @@
 import openpyxl
 import os
-import time
-# from datetime import datetime
-# time = str(datetime.now())
+# import time
+from datetime import datetime
+time = str(datetime.now())
+
 test_result_location = 'Output_Result/test_result/TestResult.xlsx'
 
 def excel_creater():
@@ -12,7 +13,7 @@ def excel_creater():
         return workbook,worksheet
     else:
         workbook = openpyxl.Workbook()
-        worksheet = workbook.create_sheet('Sheet')
+        worksheet = workbook.create_sheet('Sheet1')
         worksheet.cell(row=1, column=1).value = "SN"
         worksheet.cell(row=1, column=2).value = "Test Summary"
         worksheet.cell(row=1, column=3).value = "Result"
@@ -42,3 +43,5 @@ def write_summary():
 def remove_file():
     if (os.path.exists(test_result_location)):
         os.remove(test_result_location)
+
+
