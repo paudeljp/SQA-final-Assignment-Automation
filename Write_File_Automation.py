@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 import Format_ExcelSheet
 
-test_result_location = 'Output_Result/test_result/TestResult.xlsx'
+test_result_location = r'C:\Users\jeeva\PycharmProjects\QA_Assignment\Output_Result\test_result\TestResult.xlsx'
 
 def excel_creater():
     if(os.path.exists(test_result_location)):
