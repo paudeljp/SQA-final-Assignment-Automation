@@ -33,11 +33,17 @@ def write_result(sn,test_summary,result,remarks):
         start_column+=1
     workbook.save(test_result_location)
 
+def rename_sheet():
+    workbook = openpyxl.load_workbook(test_result_location)
+    worksheet = workbook['Sheet']
+    worksheet.title = 'TestSummary'
+    workbook.save(test_result_location)
+
 def write_summary(start_time, url_name):
-    # workbook = openpyxl.Workbook()
+    rename_sheet()
     end_time = str(datetime.now())
     workbook = openpyxl.load_workbook(test_result_location)
-    worksheet = workbook.create_sheet('TestSummary')
+    worksheet = workbook['TestSummary']
     worksheet.cell(row=1, column=1).value = "Test Executed On"
     worksheet.cell(row=1, column=2).value = start_time
     worksheet.cell(row=2, column=1).value = "Test Completed On"

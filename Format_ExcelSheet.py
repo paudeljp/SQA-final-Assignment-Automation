@@ -1,6 +1,7 @@
 import openpyxl
-from openpyxl.styles import PatternFill, Color, Font, Alignment
-from openpyxl.utils import get_column_letter
+from openpyxl.styles import PatternFill, Font, Alignment
+from openpyxl.formatting import Rule
+from openpyxl.styles.differential import DifferentialStyle
 
 errorFill = PatternFill(patternType='solid', fgColor='EE1111')
 successFill = PatternFill(patternType='solid', fgColor='00AA00')
@@ -38,9 +39,31 @@ def fit_column(worksheet):
         adjusted_width = (max_length + 2.5)
         worksheet.column_dimensions[column].width = adjusted_width
 
+def format_test_details(worksheet):
+    red_text = Font(color="000000")
+    red_fill = PatternFill(bgColor="00AA00")
+    dxf = DifferentialStyle(font=red_text, fill=red_fill)
+    rule = Rule(type="containsText", operator="containsText", text="PASS", dxf=dxf)
+    rule.formula = ['NOT(ISERROR(SEARCH("PASS",C1)))']
+    worksheet.conditional_formatting.add('C1:C60', rule)
+
+    red_text = Font(color="000000")
+    red_fill = PatternFill(bgColor="EE1111")
+    dxf = DifferentialStyle(font=red_text, fill=red_fill)
+    rule = Rule(type="containsText", operator="containsText", text="FAIL", dxf=dxf)
+    rule.formula = ['NOT(ISERROR(SEARCH("FAIL",C1)))']
+    worksheet.conditional_formatting.add('C1:C60', rule)
+
+    red_text = Font(color="000000")
+    red_fill = PatternFill(bgColor="68A0F9")
+    dxf = DifferentialStyle(font=red_text, fill=red_fill)
+    rule = Rule(type="containsText", operator="containsText", text="SKIPPED", dxf=dxf)
+    rule.formula = ['NOT(ISERROR(SEARCH("SKIPPED",C1)))']
+    worksheet.conditional_formatting.add('C1:C60', rule)
 
 def format_testdetails(worksheet):
     format_test_details_title(worksheet)
+    format_test_details(worksheet)
     fit_column(worksheet)
 
 def format_testsummary(worksheet):

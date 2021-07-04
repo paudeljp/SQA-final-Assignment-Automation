@@ -5,6 +5,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from datetime import datetime
 import time
+import sendEmail
 
 start_time = str(datetime.now())
 url_name = 'https://webmd.com'
@@ -189,4 +190,5 @@ if __name__ == "__main__":
     read_excel()
     Write_File_Automation.write_summary(start_time, url_name)
     Write_File_Automation.format_excelsheet()
+    # sendEmail.send_report()
 
