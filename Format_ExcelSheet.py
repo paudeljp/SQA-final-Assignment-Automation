@@ -12,7 +12,7 @@ darkFill = PatternFill(patternType='solid', fgColor='000000')
 
 rightAlignment = Alignment(horizontal='right', text_rotation=0, wrap_text=True, shrink_to_fit=False, indent=0)
 
-textFont = Font(name='Calibri', size=11, bold=False, color='ffffff')
+textFont = Font(name='Calibri', size=12, bold=True, color='ffffff')
 
 titleBorder = Border(
     left= Side(border_style='thin', color='000000'),

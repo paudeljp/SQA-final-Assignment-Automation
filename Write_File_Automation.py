@@ -3,6 +3,7 @@ import os
 # import time
 from datetime import datetime
 import Format_ExcelSheet
+import Piechart_Summary
 
 test_result_location = r'C:\Users\jeeva\PycharmProjects\QA_Assignment\Output_Result\test_result\TestResult.xlsx'
 
@@ -70,6 +71,7 @@ def format_excelsheet():
 
     testSummaryworksheet = workbook['TestSummary']
     Format_ExcelSheet.format_testsummary(testSummaryworksheet)
+    Piechart_Summary.create_chart(testSummaryworksheet)
 
     workbook.save(test_result_location)
 
