@@ -2,6 +2,7 @@ import openpyxl
 import os
 # import time
 from datetime import datetime
+import Format_ExcelSheet
 
 test_result_location = 'Output_Result/test_result/TestResult.xlsx'
 
@@ -17,6 +18,8 @@ def excel_creater():
         worksheet.cell(row=1, column=2).value = "Test Summary"
         worksheet.cell(row=1, column=3).value = "Result"
         worksheet.cell(row=1, column=4).value = "Remarks"
+
+        # Format_ExcelSheet.format_test_details_title(worksheet)
         workbook.save(test_result_location)
         return workbook,worksheet
 
@@ -49,9 +52,34 @@ def write_summary(start_time, url_name):
     worksheet.cell(row=6, column=2).value = '=COUNTIF(TestResults!C:C, "FAIL")'
     worksheet.cell(row=7, column=1).value = "Number of Skipped Test Case"
     worksheet.cell(row=7, column=2).value = '=COUNTIF(TestResults!C:C, "SKIPPED")'
+
+    Format_ExcelSheet.format_summary_title(worksheet)
     workbook.save(test_result_location)
+
+def format_excelsheet():
+    workbook = openpyxl.load_workbook(test_result_location)
+
+    testResultworksheet = workbook['TestResults']
+    Format_ExcelSheet.format_testdetails(testResultworksheet)
+
+    testSummaryworksheet = workbook['TestSummary']
+    Format_ExcelSheet.format_testsummary(testSummaryworksheet)
+
+    workbook.save(test_result_location)
+
+# def close_file():
+    # with open(test_result_location, 'wb') as ff:
+    #     os.close()
+    # #
+    # if (os.open(test_result_location, 777)):
+    #     os.close(test_result_location, 777)
+    # else:
+    #     print("File is not opened already")
 
 def remove_file():
     if (os.path.exists(test_result_location)):
+        # close_file()
         os.remove(test_result_location)
+    else:
+        print("The file does not exist")
 

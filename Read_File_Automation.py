@@ -7,7 +7,7 @@ from datetime import datetime
 import time
 
 start_time = str(datetime.now())
-url_name = ''
+url_name = 'https://webmd.com'
 
 def read_excel():
     print("Selenium Web Automation Framework")
@@ -182,8 +182,11 @@ def close_browser_function(driver):
         result,remarks = 'FAIL',ex
     return result,remarks
 
+
 if __name__ == "__main__":
     Write_File_Automation.remove_file()
     print("file removed")
     read_excel()
     Write_File_Automation.write_summary(start_time, url_name)
+    Write_File_Automation.format_excelsheet()
+
