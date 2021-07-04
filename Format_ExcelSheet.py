@@ -1,16 +1,25 @@
 import openpyxl
-from openpyxl.styles import PatternFill, Font, Alignment
+from openpyxl.styles import PatternFill, Font, Border, Side, Alignment
 from openpyxl.formatting import Rule
 from openpyxl.styles.differential import DifferentialStyle
 
-errorFill = PatternFill(patternType='solid', fgColor='EE1111')
-successFill = PatternFill(patternType='solid', fgColor='00AA00')
+errorFill = PatternFill(bgColor='FF0000')
+successFill = PatternFill(bgColor='00AA00')
+skippedFill = PatternFill(bgColor='68A0F9')
+
 titleFill = PatternFill(patternType='solid', fgColor='68A0F9')
 darkFill = PatternFill(patternType='solid', fgColor='000000')
 
-textAlignment = Alignment(horizontal='left', vertical='bottom', text_rotation=0, wrap_text=True, shrink_to_fit=False, indent=0)
+rightAlignment = Alignment(horizontal='right', text_rotation=0, wrap_text=True, shrink_to_fit=False, indent=0)
 
 textFont = Font(name='Calibri', size=11, bold=False, color='ffffff')
+
+titleBorder = Border(
+    left= Side(border_style='thin', color='000000'),
+    right=Side(border_style='thin', color='000000'),
+    top=Side(border_style='thin', color='000000'),
+    bottom=Side(border_style='thin', color='000000')
+)
 
 def format_summary_title(worksheet):
     total_length = 7
@@ -32,6 +41,7 @@ def fit_column(worksheet):
         column = col[0].column_letter
         for cell in col:
             try:
+                cell.border = titleBorder
                 if len(str(cell.value)) > max_length:
                     max_length = len(cell.value)
             except:
@@ -40,26 +50,24 @@ def fit_column(worksheet):
         worksheet.column_dimensions[column].width = adjusted_width
 
 def format_test_details(worksheet):
-    red_text = Font(color="000000")
-    red_fill = PatternFill(bgColor="00AA00")
-    dxf = DifferentialStyle(font=red_text, fill=red_fill)
-    rule = Rule(type="containsText", operator="containsText", text="PASS", dxf=dxf)
-    rule.formula = ['NOT(ISERROR(SEARCH("PASS",C1)))']
-    worksheet.conditional_formatting.add('C1:C60', rule)
+    # Success
+    successRule = Rule(type="containsText", operator="containsText", formula = ['NOT(ISERROR(SEARCH("PASS",C1)))'], dxf=DifferentialStyle(fill=successFill))
+    worksheet.conditional_formatting.add('C1:C60', successRule)
 
-    red_text = Font(color="000000")
-    red_fill = PatternFill(bgColor="EE1111")
-    dxf = DifferentialStyle(font=red_text, fill=red_fill)
-    rule = Rule(type="containsText", operator="containsText", text="FAIL", dxf=dxf)
-    rule.formula = ['NOT(ISERROR(SEARCH("FAIL",C1)))']
-    worksheet.conditional_formatting.add('C1:C60', rule)
+    # Failed
+    failedRule = Rule(type="containsText", operator="containsText", formula=['NOT(ISERROR(SEARCH("FAIL",C1)))'], dxf=DifferentialStyle(fill=errorFill))
+    worksheet.conditional_formatting.add('C1:C60', failedRule)
 
-    red_text = Font(color="000000")
-    red_fill = PatternFill(bgColor="68A0F9")
-    dxf = DifferentialStyle(font=red_text, fill=red_fill)
-    rule = Rule(type="containsText", operator="containsText", text="SKIPPED", dxf=dxf)
-    rule.formula = ['NOT(ISERROR(SEARCH("SKIPPED",C1)))']
-    worksheet.conditional_formatting.add('C1:C60', rule)
+    # Skipped
+    skippedRule = Rule(type="containsText", operator="containsText", formula= ['NOT(ISERROR(SEARCH("SKIPPED",C1)))'], dxf=DifferentialStyle(fill=skippedFill))
+    worksheet.conditional_formatting.add('C1:C60', skippedRule)
+
+def format_summary_details(worksheet):
+    total_length = 7
+    for len in range(1, total_length + 1):
+        _cell = worksheet.cell(row=len, column=2)
+        _cell.alignment = rightAlignment
+
 
 def format_testdetails(worksheet):
     format_test_details_title(worksheet)
@@ -68,4 +76,5 @@ def format_testdetails(worksheet):
 
 def format_testsummary(worksheet):
     format_summary_title(worksheet)
+    format_summary_details(worksheet)
     fit_column(worksheet)
