@@ -46,21 +46,22 @@ def fit_column(worksheet):
                     max_length = len(cell.value)
             except:
                 pass
-        adjusted_width = (max_length + 2.5)
+        adjusted_width = (max_length + 3)
         worksheet.column_dimensions[column].width = adjusted_width
 
 def format_test_details(worksheet):
+
     # Success
     successRule = Rule(type="containsText", operator="containsText", formula = ['NOT(ISERROR(SEARCH("PASS",C1)))'], dxf=DifferentialStyle(fill=successFill))
-    worksheet.conditional_formatting.add('C1:C60', successRule)
+    worksheet.conditional_formatting.add('C1:C100', successRule)
 
     # Failed
     failedRule = Rule(type="containsText", operator="containsText", formula=['NOT(ISERROR(SEARCH("FAIL",C1)))'], dxf=DifferentialStyle(fill=errorFill))
-    worksheet.conditional_formatting.add('C1:C60', failedRule)
+    worksheet.conditional_formatting.add('C1:C100', failedRule)
 
     # Skipped
     skippedRule = Rule(type="containsText", operator="containsText", formula= ['NOT(ISERROR(SEARCH("SKIPPED",C1)))'], dxf=DifferentialStyle(fill=skippedFill))
-    worksheet.conditional_formatting.add('C1:C60', skippedRule)
+    worksheet.conditional_formatting.add('C1:C100', skippedRule)
 
 def format_summary_details(worksheet):
     total_length = 7
