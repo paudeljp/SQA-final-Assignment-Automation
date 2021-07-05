@@ -22,14 +22,14 @@ titleBorder = Border(
 )
 
 def format_summary_title(worksheet):
-    total_length = 7
+    total_length = 10
     for len in range(1, total_length + 1):
         _cell = worksheet.cell(row=len, column=1)
         _cell.fill = titleFill
         _cell.font = textFont
 
 def format_test_details_title(worksheet):
-    total_length = 4
+    total_length = 5
     for len in range(1, total_length + 1):
         _cell = worksheet.cell(row=1, column=len)
         _cell.fill = darkFill
@@ -53,22 +53,21 @@ def format_test_details(worksheet):
 
     # Success
     successRule = Rule(type="containsText", operator="containsText", formula = ['NOT(ISERROR(SEARCH("PASS",C1)))'], dxf=DifferentialStyle(fill=successFill))
-    worksheet.conditional_formatting.add('C1:C100', successRule)
+    worksheet.conditional_formatting.add('C1:C200', successRule)
 
     # Failed
     failedRule = Rule(type="containsText", operator="containsText", formula=['NOT(ISERROR(SEARCH("FAIL",C1)))'], dxf=DifferentialStyle(fill=errorFill))
-    worksheet.conditional_formatting.add('C1:C100', failedRule)
+    worksheet.conditional_formatting.add('C1:C200', failedRule)
 
     # Skipped
     skippedRule = Rule(type="containsText", operator="containsText", formula= ['NOT(ISERROR(SEARCH("SKIPPED",C1)))'], dxf=DifferentialStyle(fill=skippedFill))
-    worksheet.conditional_formatting.add('C1:C100', skippedRule)
+    worksheet.conditional_formatting.add('C1:C200', skippedRule)
 
 def format_summary_details(worksheet):
-    total_length = 7
+    total_length = 12
     for len in range(1, total_length + 1):
         _cell = worksheet.cell(row=len, column=2)
         _cell.alignment = rightAlignment
-
 
 def format_testdetails(worksheet):
     format_test_details_title(worksheet)

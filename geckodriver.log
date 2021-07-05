@@ -959,3 +959,246 @@ JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch res
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1625474052857	geckodriver	INFO	Listening on 127.0.0.1:62924
+1625474055938	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofile0dCe4S"
+1625474057306	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofile0dCe4S\\search.json.mozlz4", (void 0)))
+1625474059914	Marionette	INFO	Listening on port 62933
+1625474060199	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://js.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/webmd-dynamic-links.min.js, line 2: TypeError: document.body is null
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+[Parent 25508, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: https://js.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/webmd-dynamic-links.min.js, line 2: TypeError: document.body is null
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+1625474088894	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+JavaScript error: https://js.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/webmd-dynamic-links.min.js, line 2: TypeError: document.body is null
+JavaScript error: https://js.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/webmd-dynamic-links.min.js, line 2: TypeError: document.body is null
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+1625474109688	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625474110471	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+JavaScript warning: https://member.webmd.com/profile.aspx, line 169: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 998: unreachable code after return statement
+1625474114159	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625474117289	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625474120276	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+JavaScript error: https://js.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/webmd-dynamic-links.min.js, line 2: TypeError: document.body is null
+JavaScript error: https://img.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/frameworks/sfe/search.js, line 275: SyntaxError: JSON.parse: unexpected character at line 1 column 2 of the JSON data
+1625474129999	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625474133156	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625474136992	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625474151927	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625474164377	Marionette	INFO	Stopped listening on port 62933
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1625475735631	geckodriver	INFO	Listening on 127.0.0.1:60085
+1625475738724	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofileivaNnW"
+1625475740077	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofileivaNnW\\search.json.mozlz4", (void 0)))
+1625475742898	Marionette	INFO	Listening on port 60093
+1625475743045	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+[Parent 9096, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+1625475767504	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 169: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 998: unreachable code after return statement
+JavaScript error: https://img.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/frameworks/sfe/search.js, line 275: SyntaxError: JSON.parse: unexpected character at line 1 column 2 of the JSON data
+1625475837506	Marionette	INFO	Stopped listening on port 60093
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1625476392671	geckodriver	INFO	Listening on 127.0.0.1:63584
+1625476395777	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofilex3Pa6f"
+1625476397150	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofilex3Pa6f\\search.json.mozlz4", (void 0)))
+1625476400106	Marionette	INFO	Listening on port 63592
+1625476400166	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 22600, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+[Parent 22600, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://member.webmd.com/profile.aspx, line 169: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 998: unreachable code after return statement
+JavaScript error: https://img.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/frameworks/sfe/search.js, line 275: SyntaxError: JSON.parse: unexpected character at line 1 column 2 of the JSON data
+1625476493841	Marionette	INFO	Stopped listening on port 63592
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625478677162	geckodriver	INFO	Listening on 127.0.0.1:53349
+1625478680274	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofilegMSMOn"
+1625478682044	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofilegMSMOn\\search.json.mozlz4", (void 0)))
+1625478685459	Marionette	INFO	Listening on port 53357
+1625478685681	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 169: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 998: unreachable code after return statement
+JavaScript error: https://www.webmd.com/search/search_results/default.aspx?query=COVID-19, line 42: ReferenceError: $ is not defined
+JavaScript error: https://img.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/frameworks/sfe/search.js, line 24: ReferenceError: $ is not defined
+JavaScript error: https://www.webmd.com/search/search_results/default.aspx?query=COVID-19, line 94: ReferenceError: $ is not defined
+JavaScript error: https://www.webmd.com/search/search_results/default.aspx?query=COVID-19, line 706: ReferenceError: $ is not defined
+JavaScript error: https://www.webmd.com/search/search_results/default.aspx?query=COVID-19, line 1296: ReferenceError: $ is not defined
+JavaScript error: https://www.webmd.com/search/search_results/default.aspx?query=COVID-19, line 1457: ReferenceError: require is not defined
+JavaScript error: https://www.webmd.com/search/search_results/default.aspx?query=COVID-19, line 1457: TypeError: webmd.load is not a function
+JavaScript error: https://www.webmd.com/search/search_results/default.aspx?query=COVID-19, line 1511: ReferenceError: $ is not defined
+JavaScript error: https://js.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/responsive_scripts_body.js, line 2: ReferenceError: $ is not defined
+JavaScript error: https://www.webmd.com/search/search_results/default.aspx?query=COVID-19, line 1511: ReferenceError: require is not defined
+1625478794186	Marionette	INFO	Stopped listening on port 53357
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1625479255914	geckodriver	INFO	Listening on 127.0.0.1:57962
+1625479258986	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofilerc0GD5"
+1625479260707	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofilerc0GD5\\search.json.mozlz4", (void 0)))
+1625479264243	Marionette	INFO	Listening on port 57971
+1625479264357	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+1625479293645	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 169: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 998: unreachable code after return statement
+JavaScript error: https://img.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/frameworks/sfe/search.js, line 275: SyntaxError: JSON.parse: unexpected character at line 1 column 2 of the JSON data
+1625479372124	Marionette	INFO	Stopped listening on port 57971
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625479983633	geckodriver	INFO	Listening on 127.0.0.1:53486
+1625479990022	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofilemLr7c8"
+1625479991874	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jeeva\\AppData\\Local\\Temp\\rust_mozprofilemLr7c8\\search.json.mozlz4", (void 0)))
+1625479995375	Marionette	INFO	Listening on port 53494
+1625479995449	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://woobox.com/js/plugins/woo.js, line 38: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 169: unreachable code after return statement
+JavaScript warning: https://member.webmd.com/profile.aspx, line 998: unreachable code after return statement
+JavaScript error: https://img.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/JS_static/frameworks/sfe/search.js, line 275: SyntaxError: JSON.parse: unexpected character at line 1 column 2 of the JSON data
+1625480129069	Marionette	INFO	Stopped listening on port 53494
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

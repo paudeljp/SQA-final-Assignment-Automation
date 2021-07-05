@@ -5,7 +5,7 @@ from datetime import datetime
 import Format_ExcelSheet
 import Piechart_Summary
 
-test_result_location = r'C:\Users\jeeva\PycharmProjects\QA_Assignment\Output_Result\test_result\TestResult.xlsx'
+test_result_location = 'Output_Result/test_result/TestResult.xlsx'
 
 def excel_creater():
     if(os.path.exists(test_result_location)):
@@ -18,15 +18,16 @@ def excel_creater():
         worksheet.cell(row=1, column=1).value = "SN"
         worksheet.cell(row=1, column=2).value = "Test Summary"
         worksheet.cell(row=1, column=3).value = "Result"
-        worksheet.cell(row=1, column=4).value = "Remarks"
+        worksheet.cell(row=1, column=4).value = "Tested On"
+        worksheet.cell(row=1, column=5).value = "Remarks"
 
         # Format_ExcelSheet.format_test_details_title(worksheet)
         workbook.save(test_result_location)
         return workbook,worksheet
 
-def write_result(sn,test_summary,result,remarks):
+def write_result(sn,test_summary,result,driverValue,remarks):
     workbook,worksheet = excel_creater()
-    fieldnames = (int(sn),test_summary,result,str(remarks))
+    fieldnames = (int(sn),test_summary,result,driverValue,str(remarks))
     start_column = 1
     start_row = int(sn)+1
     for field in fieldnames:
@@ -47,20 +48,38 @@ def write_summary(start_time, url_name):
     worksheet = workbook['TestSummary']
     worksheet.cell(row=1, column=1).value = "Test Executed On"
     worksheet.cell(row=1, column=2).value = start_time
+
     worksheet.cell(row=2, column=1).value = "Test Completed On"
     worksheet.cell(row=2, column=2).value = end_time
+
     worksheet.cell(row=3, column=1).value = "URL"
     worksheet.cell(row=3, column=2).value = url_name
-    worksheet.cell(row=4, column=1).value = "Total Number of Test"
-    worksheet.cell(row=4, column=2).value = "=(COUNTA(TestResults!A:A) - 1)"
-    worksheet.cell(row=5, column=1).value = "Number of Passed Test Case"
-    worksheet.cell(row=5, column=2).value = '=COUNTIF(TestResults!C:C, "PASS")'
-    worksheet.cell(row=6, column=1).value = "Number of Failed Test Case"
-    worksheet.cell(row=6, column=2).value = '=COUNTIF(TestResults!C:C, "FAIL")'
-    worksheet.cell(row=7, column=1).value = "Number of Skipped Test Case"
-    worksheet.cell(row=7, column=2).value = '=COUNTIF(TestResults!C:C, "SKIPPED")'
 
-    Format_ExcelSheet.format_summary_title(worksheet)
+    worksheet.cell(row=4, column=1).value = "Total Number of Test"
+    worksheet.cell(row=4, column=2).value = "=((COUNTA(TestResults!A:A) - 1) / 2)"
+
+    worksheet.cell(row=5, column=1).value = "Number of Passed Test Case - CHROME"
+    worksheet.cell(row=5, column=2).value = '=COUNTIFS(TestResults!C:C,"PASS", TestResults!D:D,"Chrome")'
+
+    worksheet.cell(row=6, column=1).value = "Number of Failed Test Case - CHROME"
+    worksheet.cell(row=6, column=2).value = '=COUNTIFS(TestResults!C:C,"FAIL", TestResults!D:D,"Chrome")'
+
+    worksheet.cell(row=7, column=1).value = "Number of Skipped Test Case - CHROME"
+    worksheet.cell(row=7, column=2).value = '=COUNTIFS(TestResults!C:C,"Skipped", TestResults!D:D,"Chrome")'
+
+    worksheet.cell(row=8, column=1).value = "Number of Passed Test Case - FIREFOX"
+    worksheet.cell(row=8, column=2).value = '=COUNTIFS(TestResults!C:C,"PASS", TestResults!D:D,"Firefox")'
+
+    worksheet.cell(row=9, column=1).value = "Number of Failed Test Case - FIREFOX"
+    worksheet.cell(row=9, column=2).value = '=COUNTIFS(TestResults!C:C,"FAIL", TestResults!D:D,"Chrome")'
+
+    worksheet.cell(row=10, column=1).value = "Number of Skipped Test Case - FIREFOX"
+    worksheet.cell(row=10, column=2).value = '=COUNTIFS(TestResults!C:C,"Skipped", TestResults!D:D,"Firefox")'
+
+    worksheet.cell(row=12, column=1).value = "Test Prepared By"
+    worksheet.cell(row=12, column=2).value = 'Jeevan Paudel'
+
+    # Format_ExcelSheet.format_summary_title(worksheet)
     workbook.save(test_result_location)
 
 def format_excelsheet():

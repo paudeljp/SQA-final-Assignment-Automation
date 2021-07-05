@@ -17,8 +17,8 @@ def send_report():
    msg = MIMEMultipart()
    msg['From'] = fromaddr
    msg['To'] = toaddr
-   msg['Subject'] = "Automation Test Result"
-   body = MIMEText("Hi Sabita, <br> <br> I am sending you automation test result.<br> <br> Thank You", 'html', 'utf-8')
+   msg['Subject'] = "Automation Test Result by Jeevan Paudel"
+   body = MIMEText("Dear Kamal sir, <br> <br>This is automation test result.<br> <br> Thank You. <br> <br> Regards, <br> Jeevan Paudel. <br>", 'html', 'utf-8')
    msg.attach(body)
 
    filename = 'Output_Result/test_result/TestResult.xlsx'

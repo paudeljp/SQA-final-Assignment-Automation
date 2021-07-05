@@ -26,7 +26,7 @@ def read_excel():
             result = 'SKIPPED'
             remarks = 'Test was skipped due to N FLAG'
             print(result,remarks)
-            Write_File_Automation.write_result(sn, test_summary, result, remarks)
+            Write_File_Automation.write_result(sn, test_summary, result, driverValue, remarks)
 
 def action_defination(sn,test_summary,xpath,action,value):
     try:
@@ -35,7 +35,10 @@ def action_defination(sn,test_summary,xpath,action,value):
             result = 'PASS'
             remarks = ''
         elif action == 'open_url':
+            url_name = value
             result,remarks = open_url_function(driver,value)
+        elif action == 'openUrlInNew_tab':
+            result,remarks = openUrlInNew_tab_function(driver,value,xpath)
         elif action == 'click':
             result,remarks = click_function(driver,xpath)
         elif action == 'verify_text':
@@ -57,16 +60,18 @@ def action_defination(sn,test_summary,xpath,action,value):
             remarks = 'Action defination not found'
             print(result,remarks)
         print(sn,test_summary,result,remarks)
-        Write_File_Automation.write_result(sn,test_summary,result,remarks)
+        Write_File_Automation.write_result(sn,test_summary,result, driverValue, remarks)
     except Exception as ex:
         print("Exception has occured")
         result = 'FAIL'
         remarks = ex
         print(result,remarks)
-        Write_File_Automation.write_result(sn, test_summary, result, remarks)
+        Write_File_Automation.write_result(sn, test_summary, result, driverValue, remarks)
 
 def open_browser_function(value):
     global driver
+    global driverValue
+    driverValue = value
     if value == 'Chrome':
         print('Chrome Browser Selected')
         driver = webdriver.Chrome('Driver_Path/chromedriver.exe')
@@ -89,6 +94,21 @@ def open_url_function(driver,value):
         result = 'FAIL'
         remarks = ex
     return result,remarks
+
+def openUrlInNew_tab_function(driver,value,xpath):
+    try:
+        find_doctor_xpath = driver.find_element_by_xpath(xpath)
+        action = ActionChains(driver)
+        action.key_down(Keys.CONTROL).click(find_doctor_xpath).key_up(Keys.CONTROL).perform()
+        driver.switch_to.window(driver.window_handles[0])
+        driver.get(value)
+        result = 'PASS'
+        remarks = ''
+    except Exception as ex:
+        result = 'FAIL'
+        remarks = ex
+    return result,remarks
+
 
 def click_function(driver,xpath):
     try:
@@ -190,5 +210,5 @@ if __name__ == "__main__":
     read_excel()
     Write_File_Automation.write_summary(start_time, url_name)
     Write_File_Automation.format_excelsheet()
-    # sendEmail.send_report()
+    sendEmail.send_report()
 
