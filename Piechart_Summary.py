@@ -1,17 +1,17 @@
-from openpyxl import Workbook
 
 from openpyxl.chart import (
     PieChart,
-    ProjectedPieChart,
     Reference
 )
-from openpyxl.chart.series import DataPoint
 from openpyxl.chart.label import DataLabelList
 
 def chart1(worksheet):
     pie = PieChart()
-    labels = Reference(worksheet, min_col=1, min_row=5, max_row=7)
-    data = Reference(worksheet, min_col=2, min_row=4, max_row=7)
+    pie.width = 12
+    pie.height = 6
+
+    labels = Reference(worksheet, min_col=1, min_row=7, max_row=9)
+    data = Reference(worksheet, min_col=2, min_row=6, max_row=9)
     pie.add_data(data, titles_from_data=True)
     pie.set_categories(labels)
     pie.title = "Test Summary Result - Chrome"
@@ -23,8 +23,11 @@ def chart1(worksheet):
 
 def chart2(worksheet):
     pie = PieChart()
-    labels = Reference(worksheet, min_col=1, min_row=8, max_row=10)
-    data = Reference(worksheet, min_col=2, min_row=7, max_row=10)
+    pie.width = 12
+    pie.height = 6
+
+    labels = Reference(worksheet, min_col=1, min_row=12, max_row=14)
+    data = Reference(worksheet, min_col=2, min_row=11, max_row=14)
     pie.add_data(data, titles_from_data=True)
     pie.set_categories(labels)
     pie.title = "Test Summary Result - Firefox"
@@ -32,7 +35,7 @@ def chart2(worksheet):
     pie.dataLabels = DataLabelList()
     pie.dataLabels.showPercent = True
 
-    worksheet.add_chart(pie, "D20")
+    worksheet.add_chart(pie, "D15")
 
 def create_chart(worksheet):
     chart1(worksheet)

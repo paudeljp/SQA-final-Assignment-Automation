@@ -1,4 +1,3 @@
-import openpyxl
 from openpyxl.styles import PatternFill, Font, Border, Side, Alignment
 from openpyxl.formatting import Rule
 from openpyxl.styles.differential import DifferentialStyle
@@ -12,7 +11,7 @@ darkFill = PatternFill(patternType='solid', fgColor='000000')
 
 rightAlignment = Alignment(horizontal='right', text_rotation=0, wrap_text=True, shrink_to_fit=False, indent=0)
 
-textFont = Font(name='Calibri', size=12, bold=True, color='ffffff')
+textFont = Font(bold=True, color='ffffff')
 
 titleBorder = Border(
     left= Side(border_style='thin', color='000000'),
@@ -21,12 +20,17 @@ titleBorder = Border(
     bottom=Side(border_style='thin', color='000000')
 )
 
-def format_summary_title(worksheet):
-    total_length = 10
-    for len in range(1, total_length + 1):
+def color_summary_title(worksheet, start, end):
+    for len in range(start, end + 1):
         _cell = worksheet.cell(row=len, column=1)
         _cell.fill = titleFill
         _cell.font = textFont
+
+def format_summary_title(worksheet):
+    color_summary_title(worksheet, 1, 4)
+    color_summary_title(worksheet, 7, 9)
+    color_summary_title(worksheet, 12, 14)
+
 
 def format_test_details_title(worksheet):
     total_length = 5
@@ -64,7 +68,7 @@ def format_test_details(worksheet):
     worksheet.conditional_formatting.add('C1:C200', skippedRule)
 
 def format_summary_details(worksheet):
-    total_length = 12
+    total_length = 16
     for len in range(1, total_length + 1):
         _cell = worksheet.cell(row=len, column=2)
         _cell.alignment = rightAlignment

@@ -35,7 +35,6 @@ def action_defination(sn,test_summary,xpath,action,value):
             result = 'PASS'
             remarks = ''
         elif action == 'open_url':
-            url_name = value
             result,remarks = open_url_function(driver,value)
         elif action == 'openUrlInNew_tab':
             result,remarks = openUrlInNew_tab_function(driver,value,xpath)
@@ -127,18 +126,6 @@ def verify_text_function(driver,xpath):
         result,remarks = 'FAIL', ex
     return result,remarks
 
-    # output_text = driver.find_element_by_xpath(xpath).text
-    # try:
-    #     assert output_text == value
-    # except AssertionError:
-    #     result = 'FAIL'
-    #     remarks = 'Actual value is ' + output_text + 'Input value is' + value
-    # else:
-    #     result = 'PASS'
-    #     remarks = ''
-    # return result,remarks
-
-
 def send_value_function(driver,xpath,value):
     try:
         driver.find_element_by_xpath(xpath).send_keys(value)
@@ -174,22 +161,11 @@ def verify_title_function(driver ,value):
         result,remarks = 'PASS', ''
     return result,remarks
 
-# output_text = driver.find_element_by_xpath(xpath).text
-    # try:
-    #     assert output_text == value
-    # except AssertionError:
-    #     result = 'FAIL'
-    #     remarks = 'Actual value is ' + output_text + 'Input value is' + value
-    # else:
-    #     result = 'PASS'
-    #     remarks = ''
-    # return result,remarks
 def hover_function(driver,xpath):
     action = ActionChains(driver)
     try:
         hover_element = driver.find_element_by_xpath(xpath)
         action.move_to_element(hover_element).perform()
-        # driver.switch_to.window(driver.window_handles[0])
         result,remarks = 'PASS', ''
     except Exception as ex:
         result,remarks = 'FAIL', ex

@@ -1,6 +1,5 @@
 import openpyxl
 import os
-# import time
 from datetime import datetime
 import Format_ExcelSheet
 import Piechart_Summary
@@ -21,7 +20,6 @@ def excel_creater():
         worksheet.cell(row=1, column=4).value = "Tested On"
         worksheet.cell(row=1, column=5).value = "Remarks"
 
-        # Format_ExcelSheet.format_test_details_title(worksheet)
         workbook.save(test_result_location)
         return workbook,worksheet
 
@@ -58,28 +56,31 @@ def write_summary(start_time, url_name):
     worksheet.cell(row=4, column=1).value = "Total Number of Test"
     worksheet.cell(row=4, column=2).value = "=((COUNTA(TestResults!A:A) - 1) / 2)"
 
-    worksheet.cell(row=5, column=1).value = "Number of Passed Test Case - CHROME"
-    worksheet.cell(row=5, column=2).value = '=COUNTIFS(TestResults!C:C,"PASS", TestResults!D:D,"Chrome")'
+    worksheet.cell(row=6, column=1).value = "CHROME"
 
-    worksheet.cell(row=6, column=1).value = "Number of Failed Test Case - CHROME"
-    worksheet.cell(row=6, column=2).value = '=COUNTIFS(TestResults!C:C,"FAIL", TestResults!D:D,"Chrome")'
+    worksheet.cell(row=7, column=1).value = "Number of Passed Test Case - Chrome"
+    worksheet.cell(row=7, column=2).value = '=COUNTIFS(TestResults!C:C,"PASS", TestResults!D:D,"Chrome")'
 
-    worksheet.cell(row=7, column=1).value = "Number of Skipped Test Case - CHROME"
-    worksheet.cell(row=7, column=2).value = '=COUNTIFS(TestResults!C:C,"Skipped", TestResults!D:D,"Chrome")'
+    worksheet.cell(row=8, column=1).value = "Number of Failed Test Case - Chrome"
+    worksheet.cell(row=8, column=2).value = '=COUNTIFS(TestResults!C:C,"FAIL", TestResults!D:D,"Chrome")'
 
-    worksheet.cell(row=8, column=1).value = "Number of Passed Test Case - FIREFOX"
-    worksheet.cell(row=8, column=2).value = '=COUNTIFS(TestResults!C:C,"PASS", TestResults!D:D,"Firefox")'
+    worksheet.cell(row=9, column=1).value = "Number of Skipped Test Case - Chrome"
+    worksheet.cell(row=9, column=2).value = '=COUNTIFS(TestResults!C:C,"Skipped", TestResults!D:D,"Chrome")'
 
-    worksheet.cell(row=9, column=1).value = "Number of Failed Test Case - FIREFOX"
-    worksheet.cell(row=9, column=2).value = '=COUNTIFS(TestResults!C:C,"FAIL", TestResults!D:D,"Chrome")'
+    worksheet.cell(row=11, column=1).value = "FIREFOX"
 
-    worksheet.cell(row=10, column=1).value = "Number of Skipped Test Case - FIREFOX"
-    worksheet.cell(row=10, column=2).value = '=COUNTIFS(TestResults!C:C,"Skipped", TestResults!D:D,"Firefox")'
+    worksheet.cell(row=12, column=1).value = "Number of Passed Test Case - Firefox"
+    worksheet.cell(row=12, column=2).value = '=COUNTIFS(TestResults!C:C,"PASS", TestResults!D:D,"Firefox")'
 
-    worksheet.cell(row=12, column=1).value = "Test Prepared By"
-    worksheet.cell(row=12, column=2).value = 'Jeevan Paudel'
+    worksheet.cell(row=13, column=1).value = "Number of Failed Test Case - Firefox"
+    worksheet.cell(row=13, column=2).value = '=COUNTIFS(TestResults!C:C,"FAIL", TestResults!D:D,"Firefox")'
 
-    # Format_ExcelSheet.format_summary_title(worksheet)
+    worksheet.cell(row=14, column=1).value = "Number of Skipped Test Case - Firefox"
+    worksheet.cell(row=14, column=2).value = '=COUNTIFS(TestResults!C:C,"Skipped", TestResults!D:D,"Firefox")'
+
+    worksheet.cell(row=16, column=1).value = "Test Prepared By"
+    worksheet.cell(row=16, column=2).value = 'Jeevan Paudel'
+
     workbook.save(test_result_location)
 
 def format_excelsheet():
@@ -94,18 +95,8 @@ def format_excelsheet():
 
     workbook.save(test_result_location)
 
-# def close_file():
-    # with open(test_result_location, 'wb') as ff:
-    #     os.close()
-    # #
-    # if (os.open(test_result_location, 777)):
-    #     os.close(test_result_location, 777)
-    # else:
-    #     print("File is not opened already")
-
 def remove_file():
     if (os.path.exists(test_result_location)):
-        # close_file()
         os.remove(test_result_location)
     else:
         print("The file does not exist")
