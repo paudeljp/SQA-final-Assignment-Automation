@@ -20,16 +20,10 @@ def send_report():
    msg['Subject'] = "Selenium Automation Test Result by Jeevan Paudel"
    body = MIMEText("Dear sir, <br> <br>"
                    "This is automation assignment test result send from selenium. <br> <br>"
-                   "Thank you so much for your consistent guidance, provided resources and the wonderful learning opportunity. I'm really impressed and grateful to have you as a trainer. Hopeful to learn a lot and move ahead professionally in the coming days with your guidance.<br> <br>"
                    "Please find the attachment below for the test result and test summary. <br> <br>"
-                   "Assignment link: <a href='https://github.com/paudeljp/SQA-final-Assignment-Automation'> Github </a> <br> <br>"
-                   "Looking forward to hearing from you. <br> <br>"
-                   "Once again thank you sir. <br><br>"
                    "Best Regards, <br>"
                    "Jeevan Paudel. <br>"
-                   "9849935243  <br>"
-                   "jeevanpaudel77@gmail.com  <br>"
-                   , 'html', 'utf-8')
+                   ,'html', 'utf-8')
    msg.attach(body)
 
    filename = 'Output_Result/test_result/TestResult.xlsx'
